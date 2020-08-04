@@ -8,14 +8,14 @@ function mostrar()
 
          while(contador <5){
 			 
-	            numero = parseInt(prompt(" Ingrese un numero"));
-		acumulador = acumulador + numero;
+	    numero = parseInt(prompt(" Ingrese un numero"));
+		acumulador += numero;
 				
 		contador++;
 	
 
 		}
-		promedio = acumulador /5;
+		promedio = acumulador /contador;
 	
 	document.getElementById("txtIdSuma").value=acumulador;
 
