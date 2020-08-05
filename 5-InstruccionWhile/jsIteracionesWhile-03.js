@@ -18,6 +18,6 @@ contador ++;
 	     claveIngresada = prompt("ingrese la clave correcta.");
 		
 	}
-
+alert("bienvenido");
 	
 }//FIN DE LA FUNCIÓN

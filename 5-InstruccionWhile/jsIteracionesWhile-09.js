@@ -31,10 +31,10 @@ function mostrar()
 
 		}
 
-          respuesta = prompt("quiere seguir");
+        respuesta = prompt("quiere seguir");
            
-			}
-		while(respuesta == 'si');
+	}while(respuesta == 'si')	;
+	
 	
 	
 		

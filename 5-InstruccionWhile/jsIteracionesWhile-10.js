@@ -26,6 +26,7 @@ function mostrar()
 	var PromedioNegativos =0;
 	var BanderaPosiNega = true;
 	var respuesta ="si";
+	var DifereNegPos;
 /*
 	respuesta="si";
 
@@ -36,47 +37,32 @@ function mostrar()
 			numeroIngresado = parseInt(prompt("  Error Ingrese un numero"))
 
 		}
-		if(numeroIngresado == 0){
-			CantidadCeros++;
-          }
-		else if(numeroIngresado < 0){
+		if(numeroIngresado < 0){
 			sumaNegativos += numeroIngresado;
 			CantidadNegativos++;
 		}
-		else if(numeroIngresado > 0){
-			sumaPositivos +=numeroIngresado;
+		else if(numeroIngresado == 0){
+			CantidadCeros++;
+		}
+		else{
+			sumaPositivos += numeroIngresado;
 			CantidadPositivos++;
 		}
-		
-	       if(numeroIngresado %2 == 0){
+		if(numeroIngresado % 2 == 0){
 			CantidadPar++;
 		}
-		if(BanderaPosiNega == true){
-			numeroIngresado = CantidadPositivos;
-			numeroIngresado = CantidadNegativos;
-			BanderaPosiNega = false;
-
-		}
-		/*
-		else if(CantidadPositivos > 0){
-			CantidadPositivos = numeroIngresado;
-
-		}
-		else if( CantidadNegativos < 0){
-			CantidadNegativos = numeroIngresado;
-		}
-	
-		*/
-		
-		
-	
-		contador ++;
-		acumulador+=numeroIngresado;
 		
 		respuesta=prompt("desea continuar?");
 	}while(respuesta=="si");
-	PromedioPositivos = sumaPositivos/CantidadPositivos;
-	PromedioNegativos =  sumaNegativos/CantidadNegativos;
+
+	if(CantidadPositivos > 0){
+	PromedioPositivos = sumaPositivos /CantidadPositivos;
+	}
+	if(CantidadNegativos < 0){
+	PromedioNegativos = sumaNegativo / CantidadNegativos;
+	}
+
+	DifereNegPos = CantidadPositivos - CantidadNegativos ;
 
 	document.write("la suma de negativos es :"+ sumaNegativos + " <br>");
 	document.write(" la suma de los positivos son:"+ sumaPositivos + "<br>");
@@ -85,5 +71,7 @@ function mostrar()
 	document.write(" La cantida de ceros son:"+ CantidadCeros + " <br>");
 	document.write(" La cantidad de numeros pares son:"+ CantidadPar + "<br>");
 	document.write(" el promedio de positivos son:" + PromedioPositivos  + "<br>");
-	document.write(" el promedio de negativos son:" +PromedioNegativos + "<br>");
+	document.write(" el promedio de negativos son:" + PromedioNegativos + "<br>");
+	document.write(" la diferencia que hay es de " + DifereNegPos + " <br>");
+
 }//FIN DE LA FUNCIÓN
