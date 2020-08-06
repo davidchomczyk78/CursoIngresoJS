@@ -35,21 +35,21 @@ function mostrar()
 			}
 
 		Temperatura = parseInt(prompt(" ingrese temperatura corporal"));
-			while(isNaN(Temperatura )&& Temperatura >32){
+			while(isNaN(Temperatura )&& Temperatura >1){
 		temperatura = parent(prompt("ingrese nuevamente temperatura corporal"));
 		}
-			if(bandera == true && temperatura >38){
+			if(bandera == true && temperatura >1){
 				NacioPersonaConMasTempe = nacionalidad;
 				temperaturaMasAlta = temperatura;
 				bandera = false;
 			}	
 			if(edad > 17 && EstadoCivil !="C"){
 				contadorSoltero+= edad;
-				acumuSoltero++;
+				
 			}
 			if(sexo!="m" && EstadoCivil !="B" || EstadoCivil !="C"){
 				ContadorMujeresSolViu += EstadoCivil;
-				acumuMujeresCaVi++;
+				
 
 			}
 			if(edad >60 && temperatura >38){
