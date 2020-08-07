@@ -6,18 +6,18 @@ var producto;
 var precio;
 var marca;
 var fabricante;
-var EsprimerJavon = true;
-var BarbijoMasCaro =0;
-var CantidadJavon =0;
+var EsprimerJabon = true;
+var CantidadJabon = 0;
 var CantidadBarbijo = 0;
-var FabriJavonMasCaro ;
-var PrecioMasCaroJavon;
+var acumuladorBarbijos =0;
+var FabriJabonMasCaro ;
+var PrecioMasCaroJabon;
 var TipoProducMasUni;
 var EsprimerProducto = true;
 var promedioProducto;
 
- for(var i = 0; i <5; i++){
-	 producto = prompt("ingrese un producto  A.Barbijo .B javon . C Alcohol");
+ for(var i = 0; i < 2; i++){
+	 producto = prompt("ingrese un producto  A.Barbijo .B jabon . C Alcohol");
 	 while(producto != "A" && producto !="B" && producto !="C"){
 		 producto = prompt(" Ingrese correctamente los productos");
 		 } 
@@ -33,17 +33,18 @@ var promedioProducto;
 	fabricante = prompt(" Ingrese fabricante del producto");
 
 // a: mas caro de los barbijo  ,,cantidadde uni. y fabricante	
-		if(producto =="B" && (EsprimerJavon == true) && PrecioMasCaroJavon < precio ){
-			PrecioMasCaroJavon = precio;
-			FabriJavonMasCaro = fabricante;
-			CantidadJavon = cantidad;
-			EsprimerJavon = false;
+		if(EsprimerJabon == true || PrecioMasCaroJabon > precio ){
+			PrecioMasCaroJabon = precio;
+			FabriJabonMasCaro = fabricante;
+			CantidadJabon = cantidad;
+			EsprimerJabon = false;
 
 		}//c. unidades de barbijo
 		else if(producto =="A"){
 			CantidadBarbijo += cantidad;
+			acumuladorBarbijos++;
 		}// b tipo de producto y promedio
-		if(TipoProducMasUni < cantidad || EsprimerProducto == true){
+		if( EsprimerProducto == true && TipoProducMasUni > cantidad){
 			TipoProducMasUni = cantidad;
 			EsprimerProducto = false;
 
@@ -51,8 +52,9 @@ var promedioProducto;
 
 
  }	
- promedioProducto = 	TipoProducMasUni/cantidad;	
- document.write("el mas caro de los jabones es " + PrecioMasCaroJavon + "<br>" + " la cantidad de unidades " + CantidadJavon + "<br>" + " y el fabricante" + FabriJavonMasCaro );
- document.write(" el tipo de procducto  con mas unidades es " + TipoProducMasUni+ "<br>" + promedioProducto);
+ promedioProducto = TipoProducMasUni / cantidad;
+
+ document.write("el mas caro de los jabones es " + PrecioMasCaroJabon + "<br>" + " la cantidad de unidades " + CantidadJabon + "<br>" + " y el fabricante " + FabriJabonMasCaro );
+ document.write(" el tipo de procducto  con mas unidades es " + TipoProducMasUni + "<br>" + " y el promedio por compra fue de " + promedioProducto);
  document.write(" las cantidad de unidades de barbijos fueron " + CantidadBarbijo);
 }

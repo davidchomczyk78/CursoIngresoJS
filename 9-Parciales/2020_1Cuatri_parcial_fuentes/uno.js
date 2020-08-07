@@ -8,12 +8,18 @@ function mostrar()
 	var fabricante;
 	var AlcoholMaBarto;
 	var contadorAlcohol = 0;
-	var cantidadAlcohol;
-	var PrimerAlcohol = true;
+	var contadorBarbijo =0;
+	var contadorJabon =0;
+	var acumuladordAlcohol = 0;
+	var acumuladorBarbijo =0;
+	var acumuladorJabon =0;
+	var PrimerAlcohol = 0;
+	var cantidadAlcoholBarato;
 	var FabricanteMasBarato;
-	var Cantidadjabon =0;
+	var precioAlcoholBarato;
+	
 
-	for(var i =0 ; i >5 ; i++){
+	for(var i =0 ; i <5 ; i++){
 
 		tipo = prompt(" elija su opcion A.(Barbijo) B.(Jabon) C(Alcohol) ");
 			while(tipo !="A" || tipo!="B" || tipo!="C"){
@@ -30,16 +36,31 @@ function mostrar()
 		marca = prompt("ingrese marca del producto");
 		fabricante = prompt(" ingrese el fabricante");
 			
-		if(tipo =="B" && (PrimerAlcohol == true) && AlcoholMaBarto < precio ){
-			AlcoholMaBarto = precio;
-			FabricanteMasBarato = fabricante;
-			cantidadAlcohol = cantidad;
-			PrimerAlcohol = false;
+		switch(tipo){
+			case "Alcohol":
+				acumuladordAlcohol+= cantidad;
+				contadorAlcohol++;
 
-		}
-		if(tipo == "Jabon"){
-			Cantidadjabon += cantidad;
+				if(PrimerAlcohol == 0 || precioAlcoholBarato > precio){
+					precioAlcoholBarato = precio;
+					cantidadAlcoholBarato = cantidad;
+					FabricanteMasBarato = fabricante;
+					PrimerAlcohol = 1;
+				}
 
+
+
+				break;
+			case "Barbijo":
+				acumuladorBarbijo+= cantidad;
+				contadorBarbijo++;
+
+				break;	
+			case "Jabon":
+				acumuladorJabon+= cantidad;
+				contadorJabon++;
+
+				break;
 		}
 
 
