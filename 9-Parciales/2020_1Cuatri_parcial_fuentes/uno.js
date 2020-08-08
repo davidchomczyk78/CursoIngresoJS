@@ -17,6 +17,8 @@ function mostrar()
 	var cantidadAlcoholBarato;
 	var FabricanteMasBarato;
 	var precioAlcoholBarato;
+	var mayorTipo;
+	var promedioCantidad;
 	
 
 	for(var i =0 ; i <5 ; i++){
@@ -35,7 +37,7 @@ function mostrar()
 			}	
 		marca = prompt("ingrese marca del producto");
 		fabricante = prompt(" ingrese el fabricante");
-			
+			// punto A.
 		switch(tipo){
 			case "Alcohol":
 				acumuladordAlcohol+= cantidad;
@@ -49,7 +51,6 @@ function mostrar()
 				}
 
 
-
 				break;
 			case "Barbijo":
 				acumuladorBarbijo+= cantidad;
@@ -61,12 +62,28 @@ function mostrar()
 				contadorJabon++;
 
 				break;
-		}
+		}//switch cierre
 
+	}// for cierre
+				if(acumuladordAlcohol > acumuladorBarbijo && acumuladordAlcohol > acumuladorJabon){
+						mayorTipo = "Alcohol";
+						promedioCantidad = acumuladordAlcohol / contadorAlcohol;
 
+				}
+				else if(acumuladorBarbijo > acumuladorJabon && acumuladorBarbijo >= acumuladordAlcohol)
+				{
+					mayorTipo = "Barbijo";
+					promedioCantidad = acumuladorBarbijo / contadorBarbijo;
 
+				}
+				else {
+					mayorTipo = "Jabon";
+					promedioCantidad = acumuladorJabon / contadorJabon;
 
-	}
-	document.write("")
+				}
+
+	document.write(" del mas barato de los alcoholes  " + precioAlcoholBarato + " la cantidad de unidades son " + cantidadAlcoholBarato + " y el fabricante mas barato es " + FabricanteMasBarato);
+	document.write(" la cantidad de unidades de jabones en total son " + acumuladorJabon);
+	document.write(" el p")
 
 }
