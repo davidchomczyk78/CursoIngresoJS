@@ -1,6 +1,99 @@
 
 function mostrar()
 {
+/*
+
+var sexo;
+var altura;
+var edad;
+var nombre;
+var respuesta="si";
+var NombreAltaMujer;
+var primerMujer = true;
+var primerViejo = true;
+var PrimerAdolecente = true;
+var EdadMasViejo;
+var MasAltaMujer;
+var NombreMasViejo;
+var NombrePrimerAdo;
+var EdadAdolecente;
+var acumuladorMujer =0;
+var acumuladorHombre =0;
+var acumuladorEdad =0;
+var contadorAdole =0;
+var contador =0;
+var contadorEdad = 0;
+var mensajeAdolecente = " A- No se incluyo ninguna dolecente";
+var mensajeNomViejo;
+var mensajeAlta;
+
+respuesta ="si"
+while(respuesta =="si")
+{
+			sexo = prompt(" ingrese sexo de la presona 'f' / 'm' ");
+				while(sexo !="f" && sexo!="m")
+				{
+			sexo = prompt(" Error seleccione bien sus opciones");
+				}
+			altura = parseInt(prompt(" ingrese altura deseada"));
+				while(isNaN(altura))
+				{
+			altura = parent(prompt(" Ingrese bien lo sujerido"));	
+				}
+			edad = parseInt(prompt("ingrese edad deseada"));
+				while(isNaN(edad)){
+			edad = parseInt(prompt("Error ingrese edad numero"));
+				}
+			nombre = prompt("ingrese un nombre el q mas te gusta");	
+
+				if(primerMujer == true && sexo!="m")
+				{	
+					acumuladorMujer+=nombre;
+					contador++;
+					MasAltaMujer = altura;
+					NombreAltaMujer = nombre;
+					primerMujer = false;
+					
+				}	
+				
+				if(primerViejo == true || EdadMasViejo > nombre)
+				{
+					acumuladorHombre+=nombre;
+					contadorEdad++;
+					NombreMasViejo = nombre;
+					EdadMasViejo = edad;
+					primerViejo = false;
+					
+				}	
+				if(PrimerAdolecente == true || edad <13 || edad >17)
+				{
+
+                    acumuladorEdad+=edad;
+					contadorAdole++;
+					EdadAdolecente = edad;
+					NombrePrimerAdo = nombre;
+					PrimerAdolecente = false;
+					
+				}
+				
+				
+			
+		
+        respuesta = prompt("quiere seguir");
+}//while	
+
+			if(PrimerAdolecente == true){
+				mensajeAdolecente = "A- No se incluyo ningun adolecente " + EdadAdolecente ;
+			
+			}
+			mensajeAlta = "B- el Nombre de la mas alta " + MasAltaMujer;
+			mensajeNomViejo = " C- El hombre mas viejo " + NombreMasViejo;
+			alert(mensajeAdolecente + "\n" + mensajeAlta + "\n" + mensajeNomViejo);
+
+}
+
+*/
+
 	var tipo;
 	var precio;
 	var cantidad;
@@ -19,6 +112,7 @@ function mostrar()
 	var precioAlcoholBarato;
 	var mayorTipo;
 	var promedioCantidad;
+	var mensajeAlcohol = " Nose compraron alcoholes ";
 	
 
 	for(var i =0 ; i <5 ; i++){
@@ -81,6 +175,7 @@ function mostrar()
 					promedioCantidad = acumuladorJabon / contadorJabon;
 
 				}
+				
 
 	document.write(" del mas barato de los alcoholes  " + precioAlcoholBarato + " la cantidad de unidades son " + cantidadAlcoholBarato + " y el fabricante mas barato es " + FabricanteMasBarato);
 	document.write(" la cantidad de unidades de jabones en total son " + acumuladorJabon);
