@@ -6,9 +6,14 @@ function mostrar()
   var respuesta = "si";
   var precioBrutoTotal;
   var acumuladorbolsa = 0;
+  var acumuladorArena =0;
+  var acumuladorCal =0;
+  var acumuladorCemento =0;
   var precioTotalConDescuento;
+  var primeraBolsa = 0;
   var CantidadMasBolsas;
   var TipoMasCaro;
+  var tipoConMasCantidadBolsa;
   var descuento;
 
   do{
@@ -28,23 +33,54 @@ function mostrar()
     {
   precioPorBolsa = parseInt(prompt(" Error ingrese la cantidad pedida"));
     } 
-
+    acumuladorbolsa += cantidadBolsa;
     precioBrutoTotal = precioPorBolsa + cantidadBolsa;
 
-        if(cantidadBolsa > 10)
-        {
-          descuento = 15;
-        }
-        else if(cantidadBolsa > 30)
-        {
-          descuento = 25;
-        }
+    if(primeraBolsa == true &&   tipoConMasCantidadBolsa > cantidadBolsa ){
+      tipoConMasCantidadBolsa = cantidadBolsa;
+      primeraBolsa = false;
+    }
+      
+
+
+     switch(tipo){
+       case "Arena":
+         acumuladorArena+=CantidadMasBolsas;
+        
+
+         break;
+       case "Cal":
+         acumuladorCal+=cantidadBolsa;
+
+         break;
+       case "Cemento":
+         acumuladorCemento+=cantidadBolsa;
+         break;    
+     }
     
 
-acumuladorbolsa += cantidadBolsa;
+
 
 respuesta = prompt("quiere seguir");
 }while(respuesta =="si");
-alert(descuento);
+
+
+
+if(cantidadBolsa > 10)
+{
+  descuento = 15;
+}
+else
+ if(cantidadBolsa > 30)
+{
+  descuento = 25;
+}else{
+  descuento = 0;
+}
+
+
+
+
+
 
 }
