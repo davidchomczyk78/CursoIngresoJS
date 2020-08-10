@@ -182,14 +182,14 @@ var mensajeJabon;
 		       PromedioCompra = acumuladorJabon / contadorJabon;
 
 		}
-		
+		// msj nohay ingresado alcohol
 		if(PrimerAlcohol == 1)
 		{
 			mensajeAlcohol = " A- el fabricante de alcohol barato " + fabricanteAlcoholBarato +
 		    "\nCantidad" + cantidadAlcoholBarato +
 			"\nPrecio" + AlcoholMasBarato;
 
-		}	
+		}	// resto del msj
 			mensajeBar = " B- el tipo con mas unidades " + MayorTipo + " promedio " + promedioCompra;
 			mensajeJabon = " C- unidades de jabon " + acumuladorJabon;
 
